@@ -1,0 +1,39 @@
+{
+  "name": "hamburger-menu",
+  "version": "0.0.0",
+  "description": "Bower component to create a left menu drawer for desktop and mobile applications!",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/palazzem/hamburger-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/palazzem/hamburger-menu/issues"
+  },
+  "keywords": [
+    "hamburger",
+    "drawer",
+    "mobile"
+  ],
+  "author": "Emanuele Palazzetti <emanuele.palazzetti@gmail.com>",
+  "homepage": "https://github.com/palazzem/hamburger-menu",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-htmlmin": "^0.2.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-usemin": "^2.1.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "~0.3.1"
+  }
+}
