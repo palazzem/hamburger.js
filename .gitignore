@@ -1,0 +1,14 @@
+# Libraries and builds
+node_modules/
+dist/
+
+# Temporary files
+*.log
+.tmp
+.sass-cache
+
+# IDE
+.idea/
+
+# OSX
+.DS_Store
