@@ -1,0 +1,22 @@
+{
+  "name": "hamburger-menu",
+  "version": "0.0.0",
+  "homepage": "https://github.com/palazzem/hamburger-menu",
+  "authors": [
+    "Emanuele Palazzetti <emanuele.palazzetti@gmail.com>"
+  ],
+  "description": "Bower component to create a left menu drawer for desktop and mobile applications!",
+  "keywords": [
+    "hamburger",
+    "drawer",
+    "mobile"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
