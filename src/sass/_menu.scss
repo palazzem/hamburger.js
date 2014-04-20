@@ -33,3 +33,11 @@
     @include menu-translation(0px);
   }
 }
+
+.hamburger-scroll {
+  position: absolute;
+  overflow-y: scroll;
+
+  width: $menu-width-full;
+  height: 100%;
+}
