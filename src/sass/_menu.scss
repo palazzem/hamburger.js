@@ -32,6 +32,12 @@
   &.open {
     @include menu-translation(0px);
   }
+
+  &.full {
+    width: $menu-width-full;
+
+    @include menu-translation(0px);
+  }
 }
 
 .hamburger-scroll {
