@@ -1,8 +1,11 @@
+// Buttons
+// -------
+
 .hamburger-button {
   display: block;
   float: left;
 
-  width: 60px;
+  width: $menu-width;
   height: 100%;
   line-height: $menu-button-position;
 
