@@ -28,8 +28,8 @@
 
   @include menu-translation(-$menu-width);
   @include menu-animate;
-}
 
-.hamburger-nav.open {
-  @include menu-translation(0px);
+  &.open {
+    @include menu-translation(0px);
+  }
 }
