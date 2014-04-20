@@ -1,1 +1,13 @@
-$background-page: #EDF1F2;
+// Color settings
+$menu-color: #ffffff !default;
+$menu-color-text: #583f7e !default;
+
+// Dimensions
+$menu-width: 60px !default;
+$menu-height: 60px !default;
+$menu-font-size-base: 24px !default;
+
+// Computed
+$menu-font-size-large: ceil(($menu-font-size-base * 1.25));
+$menu-font-size-small: ceil(($menu-font-size-base * 0.85));
+$menu-button-position: $menu-height / ($menu-font-size-base * 1.25);
