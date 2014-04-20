@@ -4,6 +4,7 @@
   // Get all elements
   var _hamburgerBtn = document.querySelector('.hamburger-button');
   var _hamburgerMenu = document.querySelector('.hamburger-nav');
+  var _hamburgerLinks = document.querySelectorAll('.hamburger-list .item');
 
   // Helpers (IE 9+)
   // ---------------
@@ -24,6 +25,20 @@
 
         el.className = classes.join(' ');
       }
+    },
+    removeClass: function(el, className) {
+      if (el.classList) {
+        el.classList.remove(className);
+      } else {
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
+    },
+    addClass: function(el, className) {
+      if (el.classList) {
+        el.classList.add(className);
+      } else {
+        el.className += ' ' + className;
+      }
     }
   };
 
@@ -31,13 +46,32 @@
   // --------------
 
   var _menuOpen = function() {
-    Helpers.toggleClass(_hamburgerMenu, 'open');
+    Helpers.addClass(_hamburgerMenu, 'open');
   };
 
   var _menuClose = function() {
-    Helpers.toggleClass(_hamburgerMenu, 'open');
+    Helpers.removeClass(_hamburgerMenu, 'open');
   };
+
+  var _menuOpenFull = function() {
+    Helpers.addClass(_hamburgerMenu, 'full');
+  };
+
+  var _menuClickFull = function() {
+    Helpers.toggleClass(_hamburgerMenu, 'full');
+    Helpers.removeClass(_hamburgerMenu, 'open');
+  }
+
+  // Listeners
+  // ---------
 
   _hamburgerBtn.addEventListener('mouseenter', _menuOpen);
   _hamburgerBtn.addEventListener('mouseleave', _menuClose);
+  _hamburgerBtn.addEventListener('click', _menuClickFull);
+
+  // Enable menu listeners
+  for(var i = 0; i < _hamburgerLinks.length; i++) {
+    _hamburgerLinks[i].addEventListener('mouseenter', _menuOpenFull);
+  }
+
 })();
