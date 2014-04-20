@@ -1,0 +1,12 @@
+// Mixins
+// ------
+
+// Menu translations
+@mixin menu-translation($width) {
+  @include translate($width, 0, 0);
+}
+
+// Animations
+@mixin menu-animate {
+  @include transition($menu-transition-time);
+}
