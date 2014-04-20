@@ -8,4 +8,9 @@
 
   border-right: 1px solid #c6d0da;
   text-align: center;
+
+  &:hover {
+    color: $menu-color;
+    background-color: $menu-color-text;
+  }
 }
