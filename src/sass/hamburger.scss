@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+// Compass requirements
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+
 // Variables and mixins
 @import "variables";
 @import "mixins";
