@@ -74,6 +74,11 @@
         display: inline-block;
         text-align: center;
       }
+
+      &:hover {
+        color: $menu-color;
+        background-color: $menu-color-text;
+      }
     }
   }
 }
