@@ -23,7 +23,7 @@
   overflow: hidden;
   width: $menu-width;
 
-  border-top: 1px solid #c6d0da;
+  border-top: 1px solid $menu-color-lines;
   background: $menu-color;
 
   @include menu-translation(-$menu-width);
