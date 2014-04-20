@@ -41,3 +41,33 @@
   width: $menu-width-full;
   height: 100%;
 }
+
+.hamburger-list {
+  background-color: $menu-color;
+  color: $menu-color-text;
+
+  line-height: $menu-width;
+  text-transform: none;
+
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid $menu-color-lines;
+
+  > li {
+
+    &:not(:first-child) {
+      @include box-shadow(inset 0 1px $menu-color-lines);
+    }
+
+    > a.item {
+      display: block;
+      text-decoration: none;
+
+      &:before {
+        width: $menu-width;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+}
