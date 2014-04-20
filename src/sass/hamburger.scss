@@ -2,6 +2,5 @@
 
 @import "variables";
 
-body {
-  background-color: $background-page;
-}
+@import "menu";
+@import "buttons";

@@ -1,0 +1,11 @@
+.hamburger-button {
+  display: block;
+  float: left;
+
+  width: 60px;
+  height: 100%;
+  line-height: $menu-button-position;
+
+  border-right: 1px solid #c6d0da;
+  text-align: center;
+}
