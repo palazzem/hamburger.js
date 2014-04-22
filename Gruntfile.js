@@ -159,6 +159,14 @@ module.exports = function(grunt) {
         ]
       },
       server: '.tmp'
+    },
+
+    // Automatically create/push gh-pages
+    'gh-pages': {
+      options: {
+        base: '<%= config.docs %>'
+      },
+      src: ['**']
     }
 
   });
@@ -191,6 +199,11 @@ module.exports = function(grunt) {
     'build',
     'copy:docs',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('deploy-docs', [
+    'docs',
+    'gh-pages'
   ]);
 
   grunt.registerTask('default', [
