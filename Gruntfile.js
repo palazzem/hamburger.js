@@ -176,6 +176,7 @@ module.exports = function(grunt) {
     'autoprefixer',
     'concat',
     'cssmin',
+    'uglify',
     'usemin',
     'htmlmin'
   ]);
