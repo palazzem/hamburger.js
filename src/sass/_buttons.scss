@@ -2,15 +2,22 @@
 // -------
 
 .hamburger-button {
+  top: 0;
+  left: 0;
+  position: fixed;
   display: block;
   float: left;
 
+  height: $menu-height;
   width: $menu-width;
-  height: 100%;
   line-height: $menu-button-position;
-
   border-right: 1px solid $menu-color-lines;
+
+  font-size: $menu-button-size;
   text-align: center;
+
+  color: $menu-color-text;
+  background-color: $menu-color;
 
   &:hover {
     color: $menu-color;

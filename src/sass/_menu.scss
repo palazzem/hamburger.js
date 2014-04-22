@@ -1,19 +1,6 @@
 // Hamburger menu styles
 // ---------------------
 
-.hamburger-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $menu-height;
-
-  color: $menu-color-text;
-  background-color: $menu-color;
-
-  font-size: $menu-button-size;
-}
-
 .hamburger-nav {
   top: $menu-height;
   left: 0;
