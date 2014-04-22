@@ -44,7 +44,6 @@
 
 .hamburger-list {
   background-color: $menu-color;
-  color: $menu-color-text;
 
   text-transform: none;
 
@@ -60,6 +59,7 @@
 
     > a.item {
       display: block;
+      color: $menu-color-text;
       font-size: $menu-item-size;
 
       line-height: $menu-height;
