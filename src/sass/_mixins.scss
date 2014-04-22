@@ -3,7 +3,7 @@
 
 // Menu translations
 @mixin menu-translation($width) {
-  @include translate($width, 0, 0);
+  @include translate3d($width, 0, 0);
 }
 
 // Animations

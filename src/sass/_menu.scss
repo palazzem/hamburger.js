@@ -46,7 +46,6 @@
   background-color: $menu-color;
   color: $menu-color-text;
 
-  line-height: $menu-height;
   text-transform: none;
 
   padding: 0;
@@ -63,6 +62,7 @@
       display: block;
       font-size: $menu-item-size;
 
+      line-height: $menu-height;
       text-decoration: none;
 
       &:before {
