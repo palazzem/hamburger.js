@@ -11,7 +11,7 @@
   color: $menu-color-text;
   background-color: $menu-color;
 
-  font-size: $menu-font-size-large;
+  font-size: $menu-button-size;
 }
 
 .hamburger-nav {
@@ -67,6 +67,8 @@
 
     > a.item {
       display: block;
+      font-size: $menu-item-size;
+
       text-decoration: none;
 
       &:before {

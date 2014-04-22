@@ -12,7 +12,9 @@ $menu-color-lines: #edf1f2 !default;
 $menu-width: 60px !default;
 $menu-width-full: 300px !default;
 $menu-height: 60px !default;
-$menu-font-size-base: 24px !default;
+
+$menu-button-size: 24px !default;
+$menu-item-size: 20px !default;
 
 // Animations
 $menu-transition-time: 0.3s !default;
@@ -20,6 +22,4 @@ $menu-transition-time: 0.3s !default;
 // Computed properties
 // -------------------
 
-$menu-font-size-large: ceil(($menu-font-size-base * 1.25));
-$menu-font-size-small: ceil(($menu-font-size-base * 0.85));
-$menu-button-position: $menu-height / ($menu-font-size-base * 1.25);
+$menu-button-position: $menu-height / $menu-button-size;
