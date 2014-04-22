@@ -68,7 +68,16 @@
       &:before {
         width: $menu-width;
         display: inline-block;
+
         text-align: center;
+        text-transform: none;
+
+        font-weight: normal;
+        font-style: normal;
+        font-variant: normal;
+
+        speak: none;
+        -webkit-font-smoothing: antialiased;
       }
 
       &:hover {
