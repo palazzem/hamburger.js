@@ -1,4 +1,4 @@
-;(function() {
+;(function(window) {
   'use strict';
 
   // Get all elements
@@ -53,11 +53,16 @@
     Helpers.removeClass(_hamburgerMenu, 'open');
   };
 
-  var _menuOpenFull = function() {
+  var _menuFullOpen = function() {
     Helpers.addClass(_hamburgerMenu, 'full');
   };
 
-  var _menuClickFull = function() {
+  var _menuFullClose = function() {
+    Helpers.removeClass(_hamburgerMenu, 'full');
+  };
+
+  var _menuClick = function() {
+    // Toggle class avoids the use of a widget status reminder
     Helpers.toggleClass(_hamburgerMenu, 'full');
     Helpers.removeClass(_hamburgerMenu, 'open');
   }
@@ -67,11 +72,21 @@
 
   _hamburgerBtn.addEventListener('mouseenter', _menuOpen);
   _hamburgerBtn.addEventListener('mouseleave', _menuClose);
-  _hamburgerBtn.addEventListener('click', _menuClickFull);
+  _hamburgerBtn.addEventListener('click', _menuClick);
 
   // Enable menu listeners
   for(var i = 0; i < _hamburgerLinks.length; i++) {
-    _hamburgerLinks[i].addEventListener('mouseenter', _menuOpenFull);
+    _hamburgerLinks[i].addEventListener('mouseenter', _menuFullOpen);
   }
 
-})();
+  // Global namespace
+  // ----------------
+
+  window.HamburgerMenu = {
+    open: _menuOpen,
+    close: _menuClose,
+    fullOpen: _menuFullOpen,
+    fullClose: _menuFullClose
+  };
+
+})(window);
