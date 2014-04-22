@@ -37,6 +37,9 @@
     width: $menu-width-full;
 
     @include menu-translation(0px);
+    @include mobile-media {
+      width: $menu-mobile-width;
+    }
   }
 }
 
@@ -46,6 +49,10 @@
 
   width: $menu-width-full;
   height: 100%;
+
+  @include mobile-media {
+    width: $menu-mobile-width;
+  }
 }
 
 .hamburger-list {
