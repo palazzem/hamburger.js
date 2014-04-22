@@ -1,6 +1,7 @@
 # Libraries and builds
 node_modules/
 dist/
+docs/
 
 # Temporary files
 *.log

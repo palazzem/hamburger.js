@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 
     config: {
       src: 'src',
-      dist: 'dist'
+      dist: 'dist',
+      docs: 'docs'
     },
 
     watch: {
@@ -114,9 +115,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= config.dist %>',
+            cwd: '<%= config.docs %>',
             src: '*.html',
-            dest: '<%= config.dist %>'
+            dest: '<%= config.docs %>'
           }
         ]
       }
@@ -124,13 +125,19 @@ module.exports = function(grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
-      dist: {
+      docs: {
         files: [
           {
             expand: true,
             cwd: '<%= config.src %>',
-            dest: '<%= config.dist %>',
+            dest: '<%= config.docs %>',
             src: '*.html'
+          },
+          {
+            expand: true,
+            cwd: '<%= config.dist %>',
+            dest: '<%= config.docs %>',
+            src: '**'
           }
         ]
       }
@@ -145,6 +152,7 @@ module.exports = function(grunt) {
             src: [
               '.tmp',
               '<%= config.dist %>/*',
+              '<%= config.docs %>/*',
               '!<%= config.dist %>/.git*'
             ]
           }
@@ -172,12 +180,16 @@ module.exports = function(grunt) {
     'clean',
     'compass:dist',
     'useminPrepare',
-    'copy:dist',
     'autoprefixer',
     'concat',
     'cssmin',
     'uglify',
-    'usemin',
+    'usemin'
+  ]);
+
+  grunt.registerTask('docs', [
+    'build',
+    'copy:docs',
     'htmlmin'
   ]);
 
