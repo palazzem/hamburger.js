@@ -10,3 +10,13 @@
 @mixin menu-animate {
   @include transition($menu-transition-time);
 }
+
+// Media queries
+// -------------
+
+// Mobile
+@mixin mobile-media {
+	@media only screen and (max-width: $menu-mobile-limit) {
+		@content;
+	}
+}
