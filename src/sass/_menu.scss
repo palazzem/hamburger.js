@@ -34,7 +34,7 @@
   position: absolute;
   overflow-y: scroll;
 
-  width: $menu-width-full;
+  width: $menu-width-full + 30px;
   height: 100%;
 
   @include mobile-media {
