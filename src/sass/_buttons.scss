@@ -23,4 +23,13 @@
     color: $menu-color;
     background-color: $menu-color-text;
   }
+
+  cursor: pointer;
+
+  /* Disable user selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
