@@ -57,6 +57,16 @@
       @include box-shadow(inset 0 1px $menu-color-lines);
     }
 
+    > a {
+      font-family: $font-family-base;
+      font-weight: $font-family-weight;
+      text-rendering: optimizeLegibility;
+
+      &::before {
+        font-family: $icon-family-base;
+      }
+    }
+
     > a.item {
       display: block;
       color: $menu-color-text;

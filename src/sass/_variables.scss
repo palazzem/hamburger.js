@@ -3,10 +3,22 @@
 
 // Note: override these variables for a better customization
 
+// Typography
+// ----------
+
+// Font family
+$font-family-weight: 300;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: "Open Sans", $font-family-sans-serif;
+$icon-family-base: "FontAwesome";
+
 // Color settings
 $menu-color: #ffffff !default;
 $menu-color-text: #583f7e !default;
 $menu-color-lines: #edf1f2 !default;
+
+// Menu interactions
+// -----------------
 
 // Dimensions
 $menu-width: 60px !default;
