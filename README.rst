@@ -5,7 +5,12 @@ Hamburger.js
 No, it's not a real Hamburger. It's a CSS3 component that you can use inside
 your fantastic website!
 
-Have a try with our `demo`_!
+It's really light:
+
+* ``hamburger.css``: 1.75 kB (gzip)
+* ``hamburger.js``: 991 B (gzip)
+
+Have a try of our `demo`_!
 
 .. _demo: http://hamburgerjs.com
 
@@ -85,7 +90,6 @@ Hamburger.js starts with many default styles. Everything is built using SASS pre
 so you can simply import ``hamburger.scss`` and override all available variables.
 Check ``_variables.scss`` for a list of all possible SASS customization (``!default`` flag).
 
-
 More details soon.
 
 Roadmap
@@ -95,6 +99,9 @@ Roadmap
 * Add Hamburgerjs to public CDNs
 * E2E tests
 * Browser support table
+* `Polymer`_ component
+
+.. _Polymer: http://www.polymer-project.org/
 
 License
 -------
