@@ -7,10 +7,10 @@
 // ----------
 
 // Font family
-$font-family-weight: 300;
+$font-family-weight: 300 !default;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-base: "Open Sans", $font-family-sans-serif;
-$icon-family-base: "FontAwesome";
+$font-family-base: "Open Sans", $font-family-sans-serif !default;
+$icon-family-base: "FontAwesome" !default;
 
 // Color settings
 $menu-color: #ffffff !default;
