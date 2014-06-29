@@ -45,7 +45,8 @@
   };
 
   var init = function(selector) {
-    var _hamburgerBtn = document.querySelector(selector || _defaults.buttonSelector);
+    // If hamburger button is cached, use it otherwise find a new one
+    _hamburgerBtn = !!_hamburgerBtn ? _hamburgerBtn : document.querySelector(selector || _defaults.buttonSelector);
 
     // Add button listeners
     _hamburgerBtn.addEventListener('mouseenter', menuOpen);
@@ -86,6 +87,12 @@
 
   for(var i = 0; i < _hamburgerLinks.length; i++) {
     _hamburgerLinks[i].addEventListener('mouseenter', menuFullOpen);
+  };
+
+  // Cache hamburger button if defaults are used
+  var _hamburgerBtn = document.querySelector(_defaults.buttonSelector);
+  if(!!_hamburgerBtn) {
+    init();
   };
 
   // Public methods
