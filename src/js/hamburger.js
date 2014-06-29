@@ -76,17 +76,11 @@
   // -----------------
 
   var _hamburgerMenu = document.querySelector('.hamburger-nav');
-  var _hamburgerLinks = document.querySelectorAll('.hamburger-list .item');
+  _hamburgerMenu.addEventListener('mouseenter', menuFullOpen);
 
-  for(var i = 0; i < _hamburgerLinks.length; i++) {
-    _hamburgerLinks[i].addEventListener('mouseenter', menuFullOpen);
-  };
-
-  // Cache hamburger button if defaults are used
+  // Cache hamburger button if defaults are used and init if it's available
   var _hamburgerBtn = document.querySelector(_defaults.buttonSelector);
-  if(!!_hamburgerBtn) {
-    init();
-  };
+  if(!!_hamburgerBtn) init();
 
   // Public methods
   // --------------
