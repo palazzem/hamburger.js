@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-    html: ['<%= config.dist %>/{,*/}*.html'],
+      html: ['<%= config.dist %>/{,*/}*.html'],
       css: ['<%= config.dist %>/css/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= config.dist %>']
@@ -132,6 +132,12 @@ module.exports = function(grunt) {
             cwd: '<%= config.src %>',
             dest: '<%= config.docs %>',
             src: '*.html'
+          },
+          {
+            expand: true,
+            cwd: '<%= config.src %>',
+            dest: '<%= config.docs %>',
+            src: 'CNAME'
           },
           {
             expand: true,
