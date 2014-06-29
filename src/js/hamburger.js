@@ -1,10 +1,5 @@
-;(function(window) {
+;(function(Hamburger) {
   'use strict';
-
-  // Get all elements
-  var _hamburgerBtn = document.querySelector('.hamburger-button');
-  var _hamburgerMenu = document.querySelector('.hamburger-nav');
-  var _hamburgerLinks = document.querySelectorAll('.hamburger-list .item');
 
   // Helpers (IE 9+)
   // ---------------
@@ -42,51 +37,65 @@
     }
   };
 
+  // Initializer
+  // -----------
+
+  var _defaults = {
+    buttonSelector: '.hamburger-button'
+  };
+
+  var init = function(selector) {
+    var _hamburgerBtn = document.querySelector(selector || _defaults.buttonSelector);
+
+    // Add button listeners
+    _hamburgerBtn.addEventListener('mouseenter', menuOpen);
+    _hamburgerBtn.addEventListener('mouseleave', menuClose);
+    _hamburgerBtn.addEventListener('click', menuClick);
+  };
+
   // Event handlers
   // --------------
 
-  var _menuOpen = function() {
+  var menuOpen = function() {
     Helpers.addClass(_hamburgerMenu, 'open');
   };
 
-  var _menuClose = function() {
+  var menuClose = function() {
     Helpers.removeClass(_hamburgerMenu, 'open');
   };
 
-  var _menuFullOpen = function() {
+  var menuFullOpen = function() {
     Helpers.addClass(_hamburgerMenu, 'full');
   };
 
-  var _menuFullClose = function() {
+  var menuFullClose = function() {
     Helpers.removeClass(_hamburgerMenu, 'full');
   };
 
-  var _menuClick = function() {
+  var menuClick = function() {
     // Toggle class avoids the use of a widget status reminder
     Helpers.toggleClass(_hamburgerMenu, 'full');
     Helpers.removeClass(_hamburgerMenu, 'open');
-  }
-
-  // Listeners
-  // ---------
-
-  _hamburgerBtn.addEventListener('mouseenter', _menuOpen);
-  _hamburgerBtn.addEventListener('mouseleave', _menuClose);
-  _hamburgerBtn.addEventListener('click', _menuClick);
-
-  // Enable menu listeners
-  for(var i = 0; i < _hamburgerLinks.length; i++) {
-    _hamburgerLinks[i].addEventListener('mouseenter', _menuFullOpen);
-  }
-
-  // Global namespace
-  // ----------------
-
-  window.HamburgerMenu = {
-    open: _menuOpen,
-    close: _menuClose,
-    fullOpen: _menuFullOpen,
-    fullClose: _menuFullClose
   };
 
-})(window);
+  // Generic listeners
+  // -----------------
+
+  var _hamburgerMenu = document.querySelector('.hamburger-nav');
+  var _hamburgerLinks = document.querySelectorAll('.hamburger-list .item');
+
+  for(var i = 0; i < _hamburgerLinks.length; i++) {
+    _hamburgerLinks[i].addEventListener('mouseenter', menuFullOpen);
+  };
+
+  // Public methods
+  // --------------
+
+  Hamburger.init = init;
+  Hamburger.open = menuOpen;
+  Hamburger.close = menuClose;
+  Hamburger.fullOpen = menuFullOpen;
+  Hamburger.fullClose = menuFullClose;
+  Hamburger.toggle = menuClick;
+
+})(window.Hamburger = window.Hamburger || {});
