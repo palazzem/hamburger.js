@@ -72,6 +72,12 @@
     }
   };
 
+  var closeOnClick = function(selector) {
+    var content = document.querySelector(selector);
+
+    content.addEventListener('click', menuFullClose);
+  }
+
   // Generic listeners
   // -----------------
 
@@ -91,5 +97,6 @@
   Hamburger.fullOpen = menuFullOpen;
   Hamburger.fullClose = menuFullClose;
   Hamburger.toggle = menuToggle;
+  Hamburger.closeOnClick = closeOnClick;
 
 })(window.Hamburger = window.Hamburger || {});
