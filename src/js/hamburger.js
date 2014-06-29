@@ -5,22 +5,6 @@
   // ---------------
 
   var Helpers = {
-    toggleClass: function(el, className) {
-      if (el.classList) {
-        el.classList.toggle(className);
-      } else {
-        var classes = el.className.split(' ');
-        var existingIndex = classes.indexOf(className);
-
-        if (existingIndex >= 0) {
-          classes.splice(existingIndex, 1);
-        } else {
-          classes.push(className);
-        }
-
-        el.className = classes.join(' ');
-      }
-    },
     removeClass: function(el, className) {
       if (el.classList) {
         el.classList.remove(className);
@@ -44,6 +28,9 @@
     buttonSelector: '.hamburger-button'
   };
 
+  // Store if menu is full opened or not
+  var _state = false;
+
   var init = function(selector) {
     // If hamburger button is cached, use it otherwise find a new one
     _hamburgerBtn = !!_hamburgerBtn ? _hamburgerBtn : document.querySelector(selector || _defaults.buttonSelector);
@@ -51,7 +38,7 @@
     // Add button listeners
     _hamburgerBtn.addEventListener('mouseenter', menuOpen);
     _hamburgerBtn.addEventListener('mouseleave', menuClose);
-    _hamburgerBtn.addEventListener('click', menuClick);
+    _hamburgerBtn.addEventListener('click', menuToggle);
   };
 
   // Event handlers
@@ -66,17 +53,23 @@
   };
 
   var menuFullOpen = function() {
+    _state = true;
     Helpers.addClass(_hamburgerMenu, 'full');
   };
 
   var menuFullClose = function() {
+    _state = false;
     Helpers.removeClass(_hamburgerMenu, 'full');
   };
 
-  var menuClick = function() {
-    // Toggle class avoids the use of a widget status reminder
-    Helpers.toggleClass(_hamburgerMenu, 'full');
-    Helpers.removeClass(_hamburgerMenu, 'open');
+  var menuToggle = function() {
+    menuClose();
+
+    if (_state) {
+      menuFullClose();
+    } else {
+      menuFullOpen();
+    }
   };
 
   // Generic listeners
@@ -103,6 +96,6 @@
   Hamburger.close = menuClose;
   Hamburger.fullOpen = menuFullOpen;
   Hamburger.fullClose = menuFullClose;
-  Hamburger.toggle = menuClick;
+  Hamburger.toggle = menuToggle;
 
 })(window.Hamburger = window.Hamburger || {});
