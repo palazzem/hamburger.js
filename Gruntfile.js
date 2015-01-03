@@ -183,7 +183,7 @@ module.exports = function(grunt) {
     });
 
   grunt.registerTask('serve', [
-    'clean',
+    'clean:server',
     'compass:server',
     'autoprefixer',
     'connect:livereload',
